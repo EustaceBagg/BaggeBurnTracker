@@ -294,12 +294,15 @@ window.addEventListener("load", async () => {
     .balanceOf(deadAddr)
     .call()
     .then(function (balance) {
-      burnedTokens = balance / Math.pow(10, baggeDecimals);
+      const burnedTokens = balance / Math.pow(10, baggeDecimals);
+      const percentBurned = ((burnedTokens / baggeTotalSupply) * 100).toFixed(
+        2
+      );
       document.getElementById("div-total-burned").innerText =
         "Total $BAGGE Burned: " + burnedTokens;
-      document.getElementById("div-percent-burned").innerText =
-        "Percent $BAGGE Burned: " +
-        ((burnedTokens / baggeTotalSupply) * 100).toFixed(2) +
-        "%";
+      document.getElementById("percent-value").innerText = percentBurned + "%";
+      document.querySelector(
+        ".circular-progress-bar::before"
+      ).style.transform = `rotate(${percentBurned * 3.6 - 45}deg)`;
     });
 });
