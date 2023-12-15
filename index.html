@@ -16,9 +16,10 @@
           );
         }
 
-        // Your contract address and ABI
-        var baggeContractAddr = "0xC5DC281E4247d56627F6f42331eAd53720d6EBC4";
-        var baggeContractABI = [
+        // Bagge Contract Info
+        const baggeDecimals = 9;
+        const baggeContractAddr = "0xC5DC281E4247d56627F6f42331eAd53720d6EBC4";
+        const baggeContractABI = [
           { inputs: [], stateMutability: "nonpayable", type: "constructor" },
           {
             inputs: [
@@ -292,14 +293,21 @@
           .balanceOf(baggeContractAddr)
           .call()
           .then(function (balance) {
+            fullTokens = balance / Math.pow(10, baggeDecimals);
             document.getElementById("balance").innerText =
-              "Contract Token Balance: " + balance;
+              "Contract Token Balance: " + fullTokens;
           });
       });
     </script>
   </head>
   <body>
     <h1>$BAGGE Burn Tracker</h1>
-    <div id="balance">Contract Token Balance:</div>
+    <i>
+      Please connect your Metamask wallet and refresh the page to get the latest
+      results
+    </i>
+    <div id="div-balance">Contract Token Balance:</div>
+    <div id="div-percent-before-burn"></div>
+    <div id="div-total-burned"></div>
   </body>
 </html>
