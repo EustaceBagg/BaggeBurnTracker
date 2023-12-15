@@ -16,6 +16,9 @@
           );
         }
 
+        // Dead wallet info
+        const deadAddr = "0x000000000000000000000000000000000000dead";
+
         // Bagge Contract Info
         const baggeDecimals = 9;
         const baggeTotalSupply = 8000000000;
@@ -300,6 +303,13 @@
               "Contract Token Balance: " + fullTokens;
             document.getElementById("div-remaining-tokens").innerText =
               "Tokens Until Next Burn: " + (burnThresholdTokens - fullTokens);
+          });
+
+        contract.methods
+          .balanceOf(deadAddr)
+          .call()
+          .then(function (balance) {
+            fullTokens = balance / Math.pow(10, baggeDecimals);
             document.getElementById("div-total-burned").innerText =
               "Total $BAGGE Burned: " + fullTokens;
           });
