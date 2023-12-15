@@ -283,7 +283,10 @@
           { stateMutability: "payable", type: "receive" },
         ];
 
-        var contract = new web3.eth.Contract(contractABI, contractAddress);
+        var contract = new web3.eth.Contract(
+          baggeContractABI,
+          baggeContractAddr
+        );
 
         contract.methods
           .balanceOf(baggeContractAddr)
