@@ -33,7 +33,7 @@ header {
 
 h1,
 .stat-item {
-  color: #4caf50; /* Adjust the color to match the design */
+  color: #4caf50;
 }
 
 .circular-progress-bar {
@@ -45,9 +45,11 @@ h1,
   align-items: center;
   justify-content: center;
   position: relative;
+  overflow: hidden;
 }
 
-.circular-progress-bar::before {
+.circular-progress-bar::before,
+.circular-progress-bar::after {
   content: "";
   position: absolute;
   top: 0;
@@ -56,12 +58,17 @@ h1,
   height: 100%;
   border-radius: 50%;
   background-color: #333;
-  transform: rotate(-45deg);
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 50% 50%);
+}
+
+.circular-progress-bar::after {
+  clip-path: circle(50% at 50% 50%);
+  background-color: #4caf50;
+  transform: rotate(-135deg);
+  /* Change this transform value based on the percentage */
 }
 
 #percent-value {
   z-index: 1;
-  color: #4caf50; /* Adjust color as needed */
+  color: #4caf50;
   font-size: 1.5em;
 }
