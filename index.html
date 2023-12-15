@@ -313,7 +313,9 @@
             document.getElementById("div-total-burned").innerText =
               "Total $BAGGE Burned: " + burnedTokens;
             document.getElementById("div-percent-burned").innerText =
-              "% $BAGGE Burned: " + burnedTokens / baggeTotalSupply + "%";
+              "% $BAGGE Burned: " +
+              ((burnedTokens / baggeTotalSupply) * 100).toiFixed(2) +
+              "%";
           });
       });
     </script>
