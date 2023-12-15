@@ -309,9 +309,11 @@
           .balanceOf(deadAddr)
           .call()
           .then(function (balance) {
-            fullTokens = balance / Math.pow(10, baggeDecimals);
+            burnedTokens = balance / Math.pow(10, baggeDecimals);
             document.getElementById("div-total-burned").innerText =
-              "Total $BAGGE Burned: " + fullTokens;
+              "Total $BAGGE Burned: " + burnedTokens;
+            document.getElementById("div-percent-burned").innerText =
+              "% $BAGGE Burned: " + burnedTokens / baggeTotalSupply + "%";
           });
       });
     </script>
@@ -326,5 +328,6 @@
     <div id="div-balance">Contract Token Balance:</div>
     <div id="div-remaining-tokens"></div>
     <div id="div-total-burned">Total $BAGGE Burned:</div>
+    <div id="div-percent-burned">% $BAGGE Burned:</div>
   </body>
 </html>
