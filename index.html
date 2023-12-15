@@ -298,7 +298,7 @@
             fullTokens = balance / Math.pow(10, baggeDecimals);
             document.getElementById("div-balance").innerText =
               "Contract Token Balance: " + fullTokens;
-            document.getElementById("percent-before-burn").innerText =
+            document.getElementById("div-remaining-tokens").innerText =
               "Tokens Until Next Burn: " + (burnThresholdTokens - fullTokens);
             document.getElementById("div-total-burned").innerText =
               "Total $BAGGE Burned: " + fullTokens;
@@ -314,7 +314,7 @@
     </i>
     <p></p>
     <div id="div-balance">Contract Token Balance:</div>
-    <div id="div-percent-before-burn"></div>
+    <div id="div-remaining-tokens"></div>
     <div id="div-total-burned">Total $BAGGE Burned:</div>
   </body>
 </html>
