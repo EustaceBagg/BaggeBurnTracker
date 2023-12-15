@@ -37,38 +37,33 @@ h1,
 }
 
 .circular-progress-bar {
-  width: 100px;
-  height: 100px;
-  background-color: #1a1a1a;
+  font-size: 50px; /* Adjust size as needed */
+  width: 1em;
+  height: 1em;
   border-radius: 50%;
+  background: conic-gradient(
+    #4caf50 0%,
+    #4caf50 var(--progress),
+    #ddd var(--progress),
+    #ddd 100%
+  );
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
 }
 
-.circular-progress-bar::before,
-.circular-progress-bar::after {
+.circular-progress-bar::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   border-radius: 50%;
-  background-color: #333;
-}
-
-.circular-progress-bar::after {
-  clip-path: circle(50% at 50% 50%);
-  background-color: #4caf50;
-  transform: rotate(-135deg);
-  /* Change this transform value based on the percentage */
-}
-
-#percent-value {
+  background: white;
+  width: calc(100% - 0.2em); /* smaller than parent */
+  height: calc(100% - 0.2em); /* smaller than parent */
   z-index: 1;
-  color: #4caf50;
-  font-size: 1.5em;
+}
+
+.percent-value {
+  position: relative;
+  z-index: 2;
 }
