@@ -294,7 +294,7 @@
           .call()
           .then(function (balance) {
             fullTokens = balance / Math.pow(10, baggeDecimals);
-            document.getElementById("balance").innerText =
+            document.getElementById("div-balance").innerText =
               "Contract Token Balance: " + fullTokens;
           });
       });
