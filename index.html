@@ -298,7 +298,7 @@
           .balanceOf(baggeContractAddr)
           .call()
           .then(function (balance) {
-            fullTokens = balance / Math.pow(10, baggeDecimals);
+            fullTokens = (balance / Math.pow(10, baggeDecimals)).toFixed(2);
             document.getElementById("div-balance").innerText =
               "Contract Token Balance: " + fullTokens;
             document.getElementById("div-remaining-tokens").innerText =
