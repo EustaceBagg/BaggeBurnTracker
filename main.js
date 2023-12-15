@@ -302,7 +302,7 @@ window.addEventListener("load", async () => {
         "Total $BAGGE Burned: " + burnedTokens;
       document.getElementById("percent-value").innerText = percentBurned + "%";
       document.querySelector(
-        ".circular-progress-bar::before"
+        ".circular-progress-bar"
       ).style.transform = `rotate(${percentBurned * 3.6 - 45}deg)`;
     });
 });
