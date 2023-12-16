@@ -284,10 +284,8 @@ window.addEventListener("load", async () => {
     .call()
     .then(function (balance) {
       fullTokens = (balance / Math.pow(10, baggeDecimals)).toFixed(2);
-      document.getElementById("div-balance").innerText =
-        "Contract Token Balance: " + fullTokens;
       document.getElementById("div-remaining-tokens").innerText =
-        "Tokens Until Next Burn: " + (burnThresholdTokens - fullTokens);
+        burnThresholdTokens - fullTokens + "$BAGGE Tokens Left to Next Burn";
     });
 
   contract.methods
@@ -299,7 +297,7 @@ window.addEventListener("load", async () => {
         2
       );
       document.getElementById("div-total-burned").innerText =
-        "Total $BAGGE Burned: " + burnedTokens;
+        burnedTokens + " $BAGGE Tokens Burned";
       document.getElementById("percent-value").innerText =
         percentBurned + "% of $BAGGE Burned 🔥";
       const dashoffset = 440 - (440 * percentBurned) / 100;
