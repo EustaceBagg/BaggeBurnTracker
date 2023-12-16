@@ -291,7 +291,7 @@ window.addEventListener("load", async () => {
       ).toFixed(2);
 
       document.getElementById("div-remaining-tokens").innerText =
-        leftToNextBurnTokens + " $BAGGE Tokens Left to Next Burn";
+        leftToNextBurnTokens + " $BAGGE Tokens to Next Burn";
 
       document.getElementById("percent-value-next-burn").innerText =
         burnReadyPercent + " % of Next Burn Ready 🔥";
