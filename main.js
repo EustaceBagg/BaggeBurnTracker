@@ -1,6 +1,5 @@
 window.addEventListener("load", async () => {
   let API_KEY = "b758782c62e548d09f450b016f0ecf6a";
-  API_KEY = "";
   // Check if Web3 has been injected by the browser (Mist/MetaMask)
   if (typeof web3 !== "undefined") {
     // Use Mist/MetaMask's provider
