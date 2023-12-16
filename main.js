@@ -1,4 +1,6 @@
 window.addEventListener("load", async () => {
+  let API_KEY = "b758782c62e548d09f450b016f0ecf6a";
+  API_KEY = "";
   // Check if Web3 has been injected by the browser (Mist/MetaMask)
   if (typeof web3 !== "undefined") {
     // Use Mist/MetaMask's provider
@@ -6,9 +8,7 @@ window.addEventListener("load", async () => {
   } else {
     // Fallback - Use infura
     window.web3 = new Web3(
-      new Web3.providers.HttpProvider(
-        "https://mainnet.infura.io/v3/b758782c62e548d09f450b016f0ecf6a"
-      )
+      new Web3.providers.HttpProvider(`https://mainnet.infura.io/v3/${API_KEY}`)
     );
   }
 
@@ -301,8 +301,7 @@ window.addEventListener("load", async () => {
       document.getElementById("div-total-burned").innerText =
         "Total $BAGGE Burned: " + burnedTokens;
       document.getElementById("percent-value").innerText = percentBurned + "%";
-      document.querySelector(
-        ".circular-progress-bar"
-      ).style.transform = `rotate(${percentBurned * 3.6 - 45}deg)`;
+      const dashoffset = 440 - (440 * percentBurned) / 100;
+      document.querySelector("circle").style.strokeDashoffset = dashoffset;
     });
 });
