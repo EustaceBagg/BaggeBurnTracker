@@ -301,6 +301,7 @@ window.addEventListener("load", async () => {
       document.getElementById("percent-value").innerText =
         percentBurned + "% of $BAGGE Burned 🔥";
       const dashoffset = 440 - (440 * percentBurned) / 100;
-      document.querySelector("circle").style.strokeDashoffset = dashoffset;
+      document.getElementById("circle-total-burn").style.strokeDashoffset =
+        dashoffset;
     });
 });
