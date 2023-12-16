@@ -313,7 +313,7 @@ window.addEventListener("load", async () => {
       document.getElementById("percent-value").innerText =
         percentBurned + "% of $BAGGE Burned 🔥";
       const dashoffset = 440 - (440 * percentBurned) / 100;
-      document.getElementById("circle-total-burn").style.strokeDashoffset =
+      document.getElementById("circle-total-burned").style.strokeDashoffset =
         dashoffset;
     });
 });
