@@ -300,8 +300,7 @@ window.addEventListener("load", async () => {
       );
       document.getElementById("div-total-burned").innerText =
         "Total $BAGGE Burned: " + burnedTokens;
-      document.getElementById("percent-value").innerText =
-        percentBurned + "% of $BAGGE Burned 🔥";
+
       const dashoffset = 440 - (440 * percentBurned) / 100;
       document.querySelector("circle").style.strokeDashoffset = dashoffset;
     });
