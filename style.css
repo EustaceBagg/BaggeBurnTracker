@@ -32,6 +32,7 @@ header {
   display: grid;
   place-items: center;
   position: relative;
+  font-weight: 700;
 }
 
 h1,
@@ -73,8 +74,7 @@ h1,
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-weight: 600;
-  font-size: 30px;
+  font-size: 15px;
   z-index: 10;
 }
 
@@ -85,10 +85,4 @@ circle {
   stroke-dasharray: 440;
   stroke-dashoffset: 440;
   z-index: 10;
-}
-
-@keyframes anim {
-  100% {
-    stroke-dashoffset: 157.5;
-  }
 }
