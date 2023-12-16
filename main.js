@@ -283,9 +283,21 @@ window.addEventListener("load", async () => {
     .balanceOf(baggeContractAddr)
     .call()
     .then(function (balance) {
-      fullTokens = (balance / Math.pow(10, baggeDecimals)).toFixed(2);
+      const contractTokens = (balance / Math.pow(10, baggeDecimals)).toFixed(2);
+      const leftToNextBurnTokens = burnThresholdTokens - contractTokens;
+      const burnReadyPercent = (
+        (contractTokens / burnThresholdTokens) *
+        100
+      ).toFixed(2);
+
       document.getElementById("div-remaining-tokens").innerText =
-        burnThresholdTokens - fullTokens + "$BAGGE Tokens Left to Next Burn";
+        leftToNextBurnTokens + " $BAGGE Tokens Left to Next Burn";
+
+      document.getElementById("percent-value-next-burn").innerText =
+        burnReadyPercent + " % of Next Burn Ready 🔥";
+      const dashoffset = 440 - (440 * burnReadyPercent) / 100;
+      document.getElementById("circle-next-burn").style.strokeDashoffset =
+        dashoffset;
     });
 
   contract.methods
