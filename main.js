@@ -1,5 +1,4 @@
 window.addEventListener("load", async () => {
-  let API_KEY = "b758782c62e548d09f450b016f0ecf6a";
   // Check if Web3 has been injected by the browser (Mist/MetaMask)
   if (typeof web3 !== "undefined") {
     // Use Mist/MetaMask's provider
@@ -7,7 +6,9 @@ window.addEventListener("load", async () => {
   } else {
     // Fallback - Use infura
     window.web3 = new Web3(
-      new Web3.providers.HttpProvider(`https://mainnet.infura.io/v3/${API_KEY}`)
+      new Web3.providers.HttpProvider(
+        "https://mainnet.infura.io/v3/b758782c62e548d09f450b016f0ecf6a"
+      )
     );
   }
 
