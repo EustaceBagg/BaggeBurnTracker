@@ -294,7 +294,7 @@ window.addEventListener("load", async () => {
     .balanceOf(deadAddr)
     .call()
     .then(function (balance) {
-      const burnedTokens = balance / Math.pow(10, baggeDecimals);
+      const burnedTokens = (balance / Math.pow(10, baggeDecimals)).toFixed(2);
       const percentBurned = ((burnedTokens / baggeTotalSupply) * 100).toFixed(
         2
       );
